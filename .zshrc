@@ -9,19 +9,24 @@ fi
 
 zinit light zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+zinit light zsh-users/zsh-completions
+autoload -Uz compinit && compinit
+zinit light Aloxaf/fzf-tab
+
 # NOTE: Must be sourced last
 zinit light zsh-users/zsh-syntax-highlighting
 
 export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 
-
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -a1 --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -a1 --color $realpath'
 
 fpath=(~/.config/zsh/completions $fpath)
 typeset -U path cdpath fpath manpath
 
-bindkey -e
 
 autoload -z edit-command-line
 zle -N edit-command-line
@@ -52,7 +57,6 @@ unsetopt HIST_EXPIRE_DUPS_FIRST
 setopt SHARE_HISTORY
 unsetopt EXTENDED_HISTORY
 
-autoload -Uz compinit && compinit
 
 if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
   eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/zen.toml)"
@@ -73,3 +77,4 @@ alias -- lla='eza -la'
 alias -- ls=eza
 alias -- lt='eza --tree'
 
+bindkey -e
