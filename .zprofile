@@ -1,7 +1,3 @@
-__is_darwin() {
-  [[ "$(uname)" = "Darwin" ]]
-}
-
-if [[ __is_darwin ]]; then
+if [[ "$(uname)" = "Darwin" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
