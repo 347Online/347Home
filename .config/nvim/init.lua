@@ -1,6 +1,5 @@
 vim.g.mapleader = ","
 
-require("user.options")
-require("user.keymaps")
-
+require("config.options")
+require("config.keymaps")
 require("config.lazy")
