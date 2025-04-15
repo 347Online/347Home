@@ -52,3 +52,4 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "StopTheMadness Pro", id: 6471380298
 
+brew "lua-language-server"
