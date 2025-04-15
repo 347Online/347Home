@@ -38,6 +38,10 @@ fi
 
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(direnv hook zsh)"
+eval "$(tinty generate-completion zsh)"
+if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
+  eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/zen.toml)"
+fi
 
 # History
 HISTSIZE="10000"
@@ -58,9 +62,6 @@ setopt SHARE_HISTORY
 unsetopt EXTENDED_HISTORY
 
 
-if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
-  eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/zen.toml)"
-fi
 
 # Aliases
 alias -- branch='git branch --show-current'

@@ -1,4 +1,5 @@
 tap "teamookla/speedtest"
+tap "tinted-theming/tinted"
 
 brew "bat"
 brew "uutils-coreutils"
@@ -21,6 +22,7 @@ brew "ripgrep"
 brew "stow"
 brew "stylua"
 brew "tealdeer"
+brew "tinty"
 brew "tmux"
 brew "zoxide"
 
