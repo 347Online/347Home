@@ -77,5 +77,9 @@ alias -- ll='eza -l'
 alias -- lla='eza -la'
 alias -- ls=eza
 alias -- lt='eza --tree'
+alias -- vi=nvim
+alias -- vim=nvim
+export EDITOR=nvim
+export VISUAL=nvim
 
 bindkey -e
