@@ -1,0 +1,6 @@
+git:
+  autoFetch: false
+os:
+  editInTerminal: true
+  editPreset: nvim-remote
+promptToReturnFromSubprocess: false
