@@ -1,0 +1,78 @@
+version = 3
+final_space = true
+
+[upgrade]
+  source = 'cdn'
+  interval = '168h'
+  auto = false
+  notice = false
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    template = ' '
+    foreground = 'red'
+    powerline_symbol = ''
+    type = 'root'
+    style = 'plain'
+
+  [[blocks.segments]]
+    template = '{{ .Path }}'
+    foreground = 'blue'
+    type = 'path'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      folder_icon = ''
+      folder_separator_icon = '/'
+      home_icon = ''
+      style = 'agnoster'
+
+  [[blocks.segments]]
+    template = ' on {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}<red>  {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<yellow>  {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}'
+    foreground = 'green'
+    type = 'git'
+    style = 'plain'
+    foreground_templates = ['{{ if or (.Working.Changed) (.Staging.Changed) }}yellow{{ end }}', '{{ if and (gt .Ahead 0) (gt .Behind 0) }}red{{ end }}', '{{ if gt .Ahead 0 }}red{{ end }}', '{{ if gt .Behind 0 }}green{{ end }}']
+
+    [blocks.segments.properties]
+      fetch_stash_count = true
+      fetch_status = true
+      fetch_upstream_icon = true
+      github_icon = ' '
+
+  [[blocks.segments]]
+    template = ' [.NET] {{ if .Unsupported }}{{ else }}{{ .Full }}{{ end }} '
+    foreground = 'magenta'
+    type = 'dotnet'
+    style = 'plain'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground_templates = [
+      "{{if gt .Code 0}}red{{end}}",
+      "{{if eq .Code 0}}green{{end}}",
+    ]
+    background = 'transparent'
+    template = '❯'
+
+[transient_prompt]
+  background = 'transparent'
+  foreground_templates = [
+    "{{if gt .Code 0}}red{{end}}",
+    "{{if eq .Code 0}}green{{end}}",
+  ]
+  template = ' '
+
+[secondary_prompt]
+  foreground = 'green'
+  background = 'transparent'
+  template = '❯❯ '

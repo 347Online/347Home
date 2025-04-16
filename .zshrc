@@ -40,7 +40,7 @@ eval "$(zoxide init zsh --cmd cd)"
 eval "$(direnv hook zsh)"
 eval "$(tinty generate-completion zsh)"
 if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
-  eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/zen.toml)"
+  eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/modern.omp.toml)"
 fi
 
 # History
