@@ -1,0 +1,40 @@
+[alias]
+	br = "branch"
+	c = "commit"
+	co = "checkout"
+	cp = "cherry-pick"
+	last = "log -1 HEAD"
+	p = "push"
+	pf = "push --force-with-lease"
+	pl = "pull"
+	pm = "pull --no-rebase"
+	pr = "pull --rebase=interactive"
+	prev = "log -1 HEAD"
+	ra = "rebase --abort"
+	rc = "rebase --continue"
+	re = "rebase --edit-todo"
+	ri = "rebase -i"
+	s = "status"
+	st = "status"
+	statsu = "status"
+	unstage = "restore --staged"
+
+[core]
+	editor = "nvim"
+	pager = "LESS='FR --redraw-on-quit' delta"
+
+[init]
+	defaultBranch = "main"
+
+[pull]
+	ff = "only"
+
+[push]
+	autoSetupRemote = true
+
+[rerere]
+	enabled = true
+
+[user]
+	email = "katiejanzen@347online.me"
+	name = "347Online | Katie Janzen"
