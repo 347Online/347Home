@@ -4,16 +4,19 @@ source "${0:a:h}/functions.zsh"
 __assert_darwin
 
 dock_item() {
-  defaults write com.apple.dock persistent-apps -array-add \
+  defaults write "com.apple.dock" "persistent-apps" -array-add \
   "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$1</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 }
 
-defaults write com.apple.dock tilesize 64
-defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock show-recents -bool false
-defaults write com.apple.dock persistent-others -array
+defaults write "com.apple.dock" "tilesize" -int 64
+defaults write "com.apple.dock" "autohide" -bool true
+defaults write "com.apple.dock" "show"-recents -bool false
+defaults write "com.apple.dock" "wvous"-br-corner -int 4
+defaults write "com.apple.dock" "wvous"-br-modifier -int 1048576
+defaults write "com.apple.dock" "showAppExposeGestureEnabled" -bool true
+defaults write "com.apple.dock" "persistent-others" -array
 
-defaults write com.apple.dock persistent-apps -array
+defaults write "com.apple.dock" "persistent-apps" -array
 
 dock_item "/Applications/Firefox.app"
 dock_item "/Applications/Thunderbird.app"
