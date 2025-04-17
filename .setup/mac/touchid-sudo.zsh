@@ -4,8 +4,8 @@ source "${0:a:h}/functions.zsh"
 __assert_darwin
 
 if [[ -f /etc/pam.d/sudo_local ]]; then
-  echo "ERR: sudo_local exists, operation would overwrite" >&2
-  exit 17
+  echo "WARN: sudo_local exists, operation would overwrite, skipping" >&2
+  exit 0
 fi
 
 echo "Enabling touch ID for sudo..." >&2
