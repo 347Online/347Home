@@ -1,7 +1,7 @@
-if [[ "$(uname)" != "Darwin" ]]; then
-  echo "This script is for Mac" >&2
-  exit 1
-fi
+#!/usr/bin/env zsh
+
+source "${0:a:h}/functions.zsh"
+__assert_darwin
 
 cd
 

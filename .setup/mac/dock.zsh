@@ -1,3 +1,8 @@
+#!/usr/bin/env zsh
+
+source "${0:a:h}/functions.zsh"
+__assert_darwin
+
 dock_item() {
   defaults write com.apple.dock persistent-apps -array-add \
   "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$1</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
