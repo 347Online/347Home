@@ -10,7 +10,6 @@ brew "eza"
 brew "fd"
 brew "fzf"
 brew "git"
-brew "gofumpt"
 brew "htop"
 brew "jq"
 brew "lazygit"
@@ -60,4 +59,3 @@ mas "Numbers", id: 409203825
 # "Overcast" = 888422857; # Currently broken
 mas "Pages", id: 409201541
 mas "StopTheMadness Pro", id: 6471380298
-
