@@ -11,6 +11,7 @@ if [[ "$(/usr/bin/which brew)" = "" ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || exit 1
 fi
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 echo "Running brew bundle..." >&2
 brew bundle || exit 1
 echo "Done" >&2

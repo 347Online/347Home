@@ -2,6 +2,8 @@
 
 source "${0:a:h}/functions.zsh"
 
+echo "Applying preferences to defaults database..." >&2
+
 plutil -replace AppleSymbolicHotKeys.64.enabled -bool no ~/Library/Preferences/com.apple.symbolichotkeys.plist
 plutil -replace AppleSymbolicHotKeys.65.enabled -bool no ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
@@ -73,4 +75,10 @@ defaults write "com.getcleanshot.app-setapp" "freezeScreen" -bool yes
 defaults write "com.getcleanshot.app-setapp" "popupAskForDestinationWhenSaving" -bool no
 defaults write "com.getcleanshot.app-setapp" "showMenuBarIcon" -bool yes
 
-echo "NOTE: You may need to log out for some changes to take effect" >&2
+echo "Done" >&2
+
+echo "Re-activating settings..." >&2
+
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+
+echo "Done" >&2
