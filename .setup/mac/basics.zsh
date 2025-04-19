@@ -20,3 +20,5 @@ echo "Placing dotfiles with GNU stow..."
 cd dotfiles
 stow . || exit 1
 echo "Done" >&2
+
+echo "Don't forget to remap caps lock to escape if you haven't already" >&2
