@@ -20,6 +20,9 @@ defaults write "NSGlobalDomain" "ApplePressAndHoldEnabled" -bool no
 defaults write "NSGlobalDomain" "TSWPAutomaticSpellingCorrection" -bool no
 defaults write "NSGlobalDomain" "KeyRepeat" -int 2
 
+defaults write "com.apple.messages.text" "EmojiReplacement" -int 1
+killall Messages
+
 defaults write "com.apple.TimeMachine" "DoNotOfferNewDisksForBackup" -bool no
 
 defaults write "com.apple.ImageCapture" "disableHotPlug" -bool yes
