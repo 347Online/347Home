@@ -6,10 +6,17 @@ usage () {
 -h            show this help message
 
 [DIRECTORY]
-Directory paths passed to editor - NYI'
+Directory path passed to editor'
 }
 
-session="$(basename $PWD)"
+dir="$1"
+if [[ "$dir" = "" ]]; then
+  dir="$PWD"
+else
+  cd "$dir"
+fi
+
+session="$(basename $dir)"
 
 while getopts ":s:h" opt; do
   case $opt in
@@ -41,15 +48,8 @@ else
   tmux rename-window -t 2 "scratch"
   tmux split-window -t "scratch" -v
   tmux resize-pane -Z
-  # TODO: Use passed in directory
-  if ! [[ $PWD == "${flakeDir}"* ]]; then
-    tmux new-window
-    tmux rename-window -t 3 "347OS"
-    tmux send-keys -t "347OS" 'cd "${flakeDir}"' C-m 'clear' C-m
-    tmux select-window -t "scratch"
-  fi
   tmux select-window -t "editor"
-  tmux send-keys -t "editor" "nvim $@" C-m
+  tmux send-keys -t "editor" "nvim $dir" C-m
 fi
 
 tmux attach-session -t "$session"
