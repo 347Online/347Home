@@ -83,3 +83,6 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 bindkey -e
+
+# Activate syntax highlighting in manpages
+eval "$(batman --export-env)"

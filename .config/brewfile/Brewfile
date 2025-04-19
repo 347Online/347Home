@@ -53,3 +53,5 @@ mas "Pages", id: 409201541
 mas "StopTheMadness Pro", id: 6471380298
 
 brew "lua-language-server"
+brew "bat-extras"
+brew "jq"
