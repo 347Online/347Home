@@ -70,8 +70,7 @@ alias -- branchhelp='git branch --list | rg -v '\''^\s+?\*|\+'\'' | fzf | awk '\
 alias -- cat=bat
 alias -- diff=delta
 alias -- gg=lazygit
-alias -- journal='nvim "/home/katie/Sync/Notes/journal/$(date +%Y-%m-%d).md"
-'
+alias -- journal='nvim "~/Sync/Notes/journal/$(date +%Y-%m-%d).md"'
 alias -- la='eza -a'
 alias -- ll='eza -l'
 alias -- lla='eza -la'
@@ -81,6 +80,7 @@ alias -- vi=nvim
 alias -- vim=nvim
 export EDITOR=nvim
 export VISUAL=nvim
+export PATH="$HOME/bin:$PATH"
 
 bindkey -e
 
