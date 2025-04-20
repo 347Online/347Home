@@ -37,7 +37,6 @@ brew "zoxide"
 
 cask "1password"
 cask "1password-cli"
-cask "discord"
 cask "firefox"
 cask "font-jetbrains-mono-nerd-font"
 cask "ghostty"
@@ -47,7 +46,6 @@ cask "monitorcontrol"
 cask "raycast"
 cask "scroll-reverser"
 cask "setapp"
-cask "thunderbird"
 
 mas "1Password for Safari", id: 1569813296
 mas "Broadcasts", id: 1469995354

@@ -8,4 +8,10 @@ ${0:a:h}/dock.zsh
 ${0:a:h}/prefs.zsh
 ${0:a:h}/touchid-sudo.zsh
 
+read -q "personal?Is this a personal machine? [y/n]: "
+if [[ "$personal" =~ ^[Yy]$ ]]; then
+  echo
+  ${0:a:h}/personal.zsh
+fi
+
 echo "Setup complete, please restart your shell" >&2
