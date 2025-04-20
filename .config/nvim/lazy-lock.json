@@ -1,5 +1,5 @@
 {
-  "Brewfile.vim": { "branch": "master", "commit": "f13b98b92f2e9b9e38f3b1d45d41e19049d671df" },
+  "Brewfile.vim": { "branch": "master", "commit": "f02890514d951d6569ad21a7a7347c02d58f13b7" },
   "LuaSnip": { "branch": "master", "commit": "c9b9a22904c97d0eb69ccb9bab76037838326817" },
   "cmp-buffer": { "branch": "main", "commit": "b74fab3656eea9de20a9b8116afa3cfc4ec09657" },
   "cmp-cmdline": { "branch": "main", "commit": "d250c63aa13ead745e3a40f61fdd3470efde3923" },
