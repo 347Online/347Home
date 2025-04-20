@@ -10,6 +10,7 @@ return {
 					string.match(name, "^%.git$")
 					or string.match(name, "^node_modules$")
 					or string.match(name, "^%.%.$")
+					or string.match(name, "^%.stfolder$")
 				then
 					return true
 				end
